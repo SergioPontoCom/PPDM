@@ -2,6 +2,7 @@ package com.example.appdesergio;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -11,8 +12,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
-    int contador=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,10 +30,20 @@ public class MainActivity extends AppCompatActivity {
 
         Button b=findViewById(R.id.Button);
         TextView tv=findViewById(R.id.TextView);
+        EditText edmin= findViewById(R.id.edmin);
+        EditText edmax= findViewById(R.id.edmax);
 
         b.setOnClickListener(view -> {
-            contador++;
-            tv.setText(Integer.toString(contador));
+            //contador = (int)(Math.random() *100);
+            int max =Integer.parseInt(edmax.getText().toString());
+            int min =Integer.parseInt(edmin.getText().toString());
+
+            Random random= new Random();
+            int valor = random.nextInt();
+
+
+
+            tv.setText(Integer.toString(valor));
 
 
         });
