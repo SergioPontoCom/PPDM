@@ -35,8 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
         b.setOnClickListener(view -> {
             //contador = (int)(Math.random() *100);
-            int max =Integer.parseInt(edmax.getText().toString());
-            int min =Integer.parseInt(edmin.getText().toString());
+
+            String minStr =edmin.getText().toString();
+            String maxStr =edmax.getText().toString();
+
+            if (minStr.isEmpty()){
+                edmin.setError("Informe o valor mínimo");
+                return;
+            }
+            if (maxStr.isEmpty()){
+                edmax.setError("Informe o valor máximo");
+                return;
+            }
+
+            int max =Integer.parseInt(maxStr);
+            int min =Integer.parseInt(minStr);
 
             Random random= new Random();
             int valor = (random.nextInt(max-min)) + min;
