@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             int min =Integer.parseInt(edmin.getText().toString());
 
             Random random= new Random();
-            int valor = random.nextInt();
+            int valor = (random.nextInt(max-min)) + min;
 
 
 
