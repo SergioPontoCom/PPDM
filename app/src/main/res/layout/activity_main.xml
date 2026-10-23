@@ -7,13 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/EdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/Salvar"
+        app:layout_constraintEnd_toStartOf="@+id/Salvar"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Salvar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+        android:text="Salvar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/Lista"
+        android:layout_width="409dp"
+        android:layout_height="642dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="88dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
